@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|c:\\users\\intel\\desktop\\it\\asp.net\\homeworks\\homework_04.02.2026\\homework_04.02.2026\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|solutionrelative:homework_04.02.2026\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|c:\\users\\intel\\desktop\\it\\asp.net\\homeworks\\homework_04.02.2026\\homework_04.02.2026\\models\\customerrangedeletedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|solutionrelative:homework_04.02.2026\\models\\customerrangedeletedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|c:\\users\\intel\\desktop\\it\\asp.net\\homeworks\\homework_04.02.2026\\homework_04.02.2026\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|solutionrelative:homework_04.02.2026\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|c:\\users\\intel\\desktop\\it\\asp.net\\homeworks\\homework_04.02.2026\\homework_04.02.2026\\models\\customeryearupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C58CA27-DE67-4EFF-6E4C-03DCF829980A}|HomeWork_04.02.2026\\HomeWork_04.02.2026.csproj|solutionrelative:homework_04.02.2026\\models\\customeryearupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerRangeDeleteDto.cs",
+              "DocumentMoniker": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Models\\CustomerRangeDeleteDto.cs",
+              "RelativeDocumentMoniker": "HomeWork_04.02.2026\\Models\\CustomerRangeDeleteDto.cs",
+              "ToolTip": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Models\\CustomerRangeDeleteDto.cs",
+              "RelativeToolTip": "HomeWork_04.02.2026\\Models\\CustomerRangeDeleteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T12:47:22.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerYearUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Models\\CustomerYearUpdateDto.cs",
+              "RelativeDocumentMoniker": "HomeWork_04.02.2026\\Models\\CustomerYearUpdateDto.cs",
+              "ToolTip": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Models\\CustomerYearUpdateDto.cs",
+              "RelativeToolTip": "HomeWork_04.02.2026\\Models\\CustomerYearUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T12:43:56.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "HomeWork_04.02.2026\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Models\\Customer.cs",
+              "RelativeToolTip": "HomeWork_04.02.2026\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:42:04.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "HomeWork_04.02.2026\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\Intel\\Desktop\\IT\\ASP.NET\\HomeWorks\\HomeWork_04.02.2026\\HomeWork_04.02.2026\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "HomeWork_04.02.2026\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAADwv2IAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T11:41:38.206Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

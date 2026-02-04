@@ -1,0 +1,129 @@
+[
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "GetCustomers",
+    "RelativePath": "api/customers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "minYear",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "AddCustomer",
+    "RelativePath": "api/customers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customer",
+        "Type": "HomeWork_04._02._2026.Models.Customer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "UpdateCustomer",
+    "RelativePath": "api/customers",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customer",
+        "Type": "HomeWork_04._02._2026.Models.Customer",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "GetCustomer",
+    "RelativePath": "api/customers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "DeleteCustomer",
+    "RelativePath": "api/customers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "UpdateCustomerName",
+    "RelativePath": "api/customers/{id}/year",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "birthdayYearDTO",
+        "Type": "HomeWork_04._02._2026.Models.CustomerYearUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "GetCustomerNames",
+    "RelativePath": "api/customers/names",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeWork_04._02._2026.Controllers.CustomerController",
+    "Method": "DeleteRange",
+    "RelativePath": "api/customers/range",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerRangeDeleteDto",
+        "Type": "HomeWork_04._02._2026.Models.CustomerRangeDeleteDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
