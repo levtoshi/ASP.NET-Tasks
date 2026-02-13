@@ -1,15 +1,22 @@
+using HomeWork_09._02._2026.Filters;
 using HomeWork_09._02._2026.Interfaces;
+using HomeWork_09._02._2026.Middlewares;
 using HomeWork_09._02._2026.Services;
 using HomeWork_09._02._2026.Storage;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers(opt => opt.Filters.Add(new ContentSizeFilter()));
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Dependency Injection
+builder.Services.AddTransient<RequestTimeLoggerMiddleware>();
+builder.Services.AddTransient<CopyrightMiddleware>();
+
 builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=UsersSubDB;Trusted_Connection=True;"));
 builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
@@ -22,6 +29,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<RequestTimeLoggerMiddleware>();
+app.UseMiddleware<CopyrightMiddleware>();
 
 app.UseHttpsRedirection();
 
