@@ -1,0 +1,5 @@
+2026-02-19 20:13:31.777 +02:00 [WRN] Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware Failed to determine the https port for redirect.
+2026-02-19 20:13:32.407 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/cryptos/1 responded 401 in 649.7319 ms
+2026-02-19 20:13:55.464 +02:00 [INF] CryptoProj.Domain.Services.Users.UsersService User string registered successfully.
+2026-02-19 20:13:55.700 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP POST /api/v1/users/register responded 200 in 5620.2454 ms
+2026-02-19 20:14:32.305 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/cryptos/1 responded 401 in 59.6176 ms

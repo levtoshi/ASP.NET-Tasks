@@ -8,7 +8,7 @@ namespace CryptoProj.Domain.Models
 {
     public class AnalyticsItem
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int CryptocurrencyId { get; set; }
         public bool Bull { get; set; }
         public decimal TargetPrice { get; set; }

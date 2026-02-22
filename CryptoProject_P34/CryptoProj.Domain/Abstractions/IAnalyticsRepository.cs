@@ -9,6 +9,8 @@ namespace CryptoProj.Domain.Abstractions
 {
     public interface IAnalyticsRepository
     {
+        ValueTask<AnalyticsItem?> Get(int analyticsItemId);
+        Task<AnalyticsItem> Add(AnalyticsItem analyticsItem);
         Task<AnalyticsItem> Update(AnalyticsItem analyticsItem);
     }
 }
