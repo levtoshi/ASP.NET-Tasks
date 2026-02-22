@@ -59,3 +59,4 @@ project.fragment.lock.json
 *.sw?
 
 *.tsbuildinfo
+appsettings.json
