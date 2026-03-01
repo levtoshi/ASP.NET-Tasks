@@ -1,6 +1,8 @@
 using CryptoProj.Domain.Services.Users;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace CryptoProj.API.Controllers;
 
@@ -35,5 +37,35 @@ public class UsersController : ControllerBase
     {
         var user = await _usersService.Login(request);
         return Ok(user);
+    }
+
+    // 1. redirect to Google
+    [HttpGet("google")]
+    public IActionResult GoogleLogin()
+    {
+        var props = new AuthenticationProperties
+        {
+            RedirectUri = "/api/v1/users/google-callback"
+        };
+
+        return Challenge(props, "Google");
+    }
+
+    // 2. callback
+    [HttpGet("google-callback")]
+    public async Task<IActionResult> GoogleCallback()
+    {
+        var result = await HttpContext.AuthenticateAsync("Google");
+
+        if (!result.Succeeded)
+            return BadRequest("Google auth failed");
+
+        var googleId = result.Principal.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+        var email = result.Principal.FindFirst(ClaimTypes.Email)!.Value;
+        var name = result.Principal.FindFirst(ClaimTypes.Name)!.Value;
+
+        var user = await _usersService.LoginWithGoogle(googleId, email, name);
+
+        return Ok(user); // тут твій JWT
     }
 }

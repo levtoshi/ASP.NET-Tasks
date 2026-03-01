@@ -19,13 +19,21 @@ public class UserRepository : BaseRepository<User>, IUserRepository
 
     public async Task<User?> GetUserByEmail(string email)
     {
-        var user = await Context.Users.FirstOrDefaultAsync(u => u.Email == email);
-
-        return user;
+        return await Context.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
     public Task<bool> IsEmailTaken(string email)
     {
         return Context.Users.AnyAsync(u => u.Email == email);
+    }
+
+    public async ValueTask<User?> Get(int userId)
+    {
+        return await Context.Users.FindAsync(userId);
+    }
+
+    public async Task<User?> GetByGoogleId(string googleId)
+    {
+        return await Context.Users.FirstOrDefaultAsync(u => u.GoogleId == googleId);
     }
 }

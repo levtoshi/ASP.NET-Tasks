@@ -8,4 +8,5 @@ public interface IUserRepository
     Task<User?> GetUserByEmail(string email);
     ValueTask<User?> Get(int userId);
     Task<bool> IsEmailTaken(string email);
+    Task<User?> GetByGoogleId(string googleId);
 }

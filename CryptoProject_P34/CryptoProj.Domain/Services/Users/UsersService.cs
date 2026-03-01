@@ -67,6 +67,27 @@ public class UsersService
             : MapToResponse(user);
     }
 
+    public async Task<UserResponse> LoginWithGoogle(string googleId, string email, string name)
+    {
+        var user = await _userRepository.GetByGoogleId(googleId);
+
+        if (user == null)
+        {
+            user = new User
+            {
+                GoogleId = googleId,
+                Email = email,
+                Username = name,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            user = await _userRepository.Register(user);
+        }
+
+        var token = _jwtTokenGenerator.GenerateToken(user);
+        return MapToResponse(user, token);
+    }
+
     private UserResponse MapToResponse(User user, string? token = null) =>
         new()
         {

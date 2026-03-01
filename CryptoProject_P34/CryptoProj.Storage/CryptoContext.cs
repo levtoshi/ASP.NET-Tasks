@@ -13,6 +13,7 @@ public class CryptoContext : DbContext
     public DbSet<Cryptocurrency> Cryptocurrencies { get; set; }
     public DbSet<CryptoHistoryItem> CryptoHistoryItems { get; set; }
     public DbSet<AnalyticsItem> AnalyticsItems { get; set; }
+    public DbSet<Cat> Cats { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -59,5 +60,8 @@ public class CryptoContext : DbContext
             .HasOne<Cryptocurrency>()
             .WithMany()
             .HasForeignKey(a => a.CryptocurrencyId);
+
+        modelBuilder.Entity<Cat>()
+            .HasKey(a => a.Id);
     }
 }

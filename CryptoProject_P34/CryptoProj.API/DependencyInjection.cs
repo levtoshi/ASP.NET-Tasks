@@ -3,6 +3,7 @@ using CryptoProj.Domain.Abstractions;
 using CryptoProj.Domain.Models.Requests;
 using CryptoProj.Domain.Services.Analytics;
 using CryptoProj.Domain.Services.Auth;
+using CryptoProj.Domain.Services.Cats;
 using CryptoProj.Domain.Services.Cryptocurrencies;
 using CryptoProj.Domain.Services.Users;
 using CryptoProj.Storage;
@@ -23,11 +24,13 @@ public static class DependencyInjection
         services.AddScoped<ICryptocurrencyRepository, CryptocurrencyDataProvider>();
         services.AddScoped<ICryptoHistoryRepository, CryptoHistoryRepository>();
         services.AddScoped<IAnalyticsRepository, AnalyticsRepository>();
+        services.AddScoped<ICatsRepository, CatsRepository>();
 
         services.AddScoped<UsersService>();
         services.AddScoped<CryptocurrenciesService>();
         services.AddTransient<JwtTokenGenerator>();
         services.AddScoped<AnalyticsService>();
+        services.AddScoped<CatsService>();
 
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
         

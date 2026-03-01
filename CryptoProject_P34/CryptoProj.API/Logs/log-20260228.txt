@@ -1,0 +1,148 @@
+2026-02-28 18:48:25.517 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/auth/google responded 404 in 397.6383 ms
+2026-02-28 18:49:40.911 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/users/google responded 404 in 240.4785 ms
+2026-02-28 18:49:56.602 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api responded 404 in 9.0035 ms
+2026-02-28 18:50:12.354 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api responded 404 in 11.0482 ms
+2026-02-28 18:50:22.074 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/users/google responded 404 in 0.4817 ms
+2026-02-28 18:54:51.829 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 1001.2840 ms
+2026-02-28 18:55:04.337 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 1255.7249 ms
+2026-02-28 18:55:04.457 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /favicon.ico responded 404 in 5.2495 ms
+2026-02-28 18:56:52.930 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 647.5992 ms
+2026-02-28 18:56:56.399 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 561.2865 ms
+2026-02-28 18:56:56.825 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 399.9814 ms
+2026-02-28 19:02:42.476 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 844.9025 ms
+2026-02-28 19:02:46.131 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 663.6184 ms
+2026-02-28 19:02:46.175 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 6.6671 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:02:46.254 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:04:54.206 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 747.9443 ms
+2026-02-28 19:04:58.533 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 756.0583 ms
+2026-02-28 19:04:58.606 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 6.1948 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:04:58.698 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:04:58.863 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.0332 ms
+2026-02-28 19:05:32.450 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 743.4317 ms
+2026-02-28 19:05:51.009 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 671.7329 ms
+2026-02-28 19:05:51.061 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 6.8804 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:05:51.140 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:05:51.263 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 1.7653 ms
+2026-02-28 19:08:43.483 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 591.0902 ms
+2026-02-28 19:08:47.716 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 798.7661 ms
+2026-02-28 19:08:47.801 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 7.5738 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:08:47.867 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:08:47.999 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 7.4764 ms
+2026-02-28 19:10:43.878 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /swagger/index.html responded 404 in 97.9577 ms
+2026-02-28 19:10:51.520 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 552.2891 ms
+2026-02-28 19:10:55.538 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 986.3541 ms
+2026-02-28 19:10:55.570 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 3.5036 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:10:55.637 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:12:21.367 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 609.5197 ms
+2026-02-28 19:12:25.129 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 599.7697 ms
+2026-02-28 19:12:25.178 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 11.5985 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:12:25.257 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:12:25.413 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 15.0730 ms
+2026-02-28 19:14:02.371 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google responded 302 in 723.9832 ms
+2026-02-28 19:14:05.900 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 302 in 688.6141 ms
+2026-02-28 19:14:05.935 +02:00 [ERR] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /api/v1/users/google-callback responded 500 in 5.6038 ms
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-02-28 19:14:06.016 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Authentication.AuthenticationFailureException: An error was encountered while handling the remote login.
+ ---> Microsoft.AspNetCore.Authentication.AuthenticationFailureException: The oauth state was missing or invalid.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Authentication.RemoteAuthenticationHandler`1.HandleRequestAsync()
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-02-28 19:14:06.165 +02:00 [INF] Serilog.AspNetCore.RequestLoggingMiddleware HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.6769 ms

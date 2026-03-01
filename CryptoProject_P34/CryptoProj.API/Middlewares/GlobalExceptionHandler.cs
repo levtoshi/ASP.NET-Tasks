@@ -1,4 +1,5 @@
 using System.Text.Json;
+using CryptoProj.API.Records;
 using CryptoProj.Domain.Exceptions;
 using FluentValidation;
 
@@ -45,5 +46,5 @@ public class GlobalExceptionHandler : IMiddleware
         }
     }
 
-    record Error(int StatusCode, string Message, string? Detail = null);
+    //record Error(int StatusCode, string Message, string? Detail = null);
 }

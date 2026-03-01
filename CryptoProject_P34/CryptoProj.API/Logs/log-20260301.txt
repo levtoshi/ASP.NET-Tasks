@@ -1,0 +1,2131 @@
+2026-03-01 12:14:51.630 +02:00 [FTL] Microsoft.AspNetCore.Hosting.Diagnostics Application startup exception
+System.InvalidOperationException: request must have a valid TryParse method to support converting from a string. No public static bool CatsRequest.TryParse(string, out CatsRequest) method found for request.
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.BindParameterFromValue(ParameterInfo parameter, Expression valueExpression, RequestDelegateFactoryContext factoryContext, String source)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgument(ParameterInfo parameter, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2026-03-01 12:14:52.062 +02:00 [ERR] Microsoft.Extensions.Hosting.Internal.Host Hosting failed to start
+System.InvalidOperationException: request must have a valid TryParse method to support converting from a string. No public static bool CatsRequest.TryParse(string, out CatsRequest) method found for request.
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.BindParameterFromValue(ParameterInfo parameter, Expression valueExpression, RequestDelegateFactoryContext factoryContext, String source)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgument(ParameterInfo parameter, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.EnsureInitialized()
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-03-01 12:17:42.854 +02:00 [ERR] Microsoft.Extensions.Hosting.Internal.Host Hosting failed to start
+System.InvalidOperationException: No service for type 'CryptoProj.Domain.Abstractions.ICatsRepository' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at CryptoProj.API.HostedServices.CatsHostedService.StartAsync(CancellationToken cancellationToken) in C:\Users\Intel\Desktop\IT\ASP.NET\HomeWorks\CryptoProject_P34\CryptoProj.API\HostedServices\CatsHostedService.cs:line 23
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-03-01 12:19:14.512 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:19:35.619 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:19:45.636 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:19:55.653 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:15.122 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:20.356 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:25.373 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:30.389 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:42.699 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:47.914 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:52.936 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:20:57.950 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:21:02.984 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:21:08.007 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:21:13.033 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 12:40:17.782 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:21:39.321 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:21:45.481 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:21:50.792 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:21:55.852 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:00.883 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:06.038 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:11.100 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:16.113 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:21.125 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:26.148 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:31.169 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:36.189 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:41.210 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:46.283 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:51.300 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:22:56.314 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:01.334 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:06.346 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:11.370 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:16.398 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:21.421 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:26.434 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:31.451 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:36.483 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:41.503 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:46.583 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:51.589 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:23:56.616 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:01.639 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:06.663 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:11.672 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:16.685 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:21.706 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:26.714 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:31.754 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:36.784 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:41.897 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:46.983 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:52.000 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:24:57.046 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:02.064 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:07.091 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:12.165 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:17.213 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:22.241 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:27.273 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:32.335 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:37.366 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:42.388 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:47.437 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:52.465 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:25:57.485 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:02.529 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:07.550 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:12.576 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:17.586 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:22.605 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:27.619 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:32.629 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:37.644 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:42.655 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:47.698 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:52.723 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:26:57.750 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:02.771 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:07.783 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:12.797 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:17.811 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:22.822 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:27.844 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:32.854 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:37.872 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:42.890 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:47.918 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:52.935 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:27:57.948 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:02.969 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:07.988 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:13.009 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:18.028 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:23.037 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:28.059 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:33.071 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:38.082 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:43.093 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:48.126 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:53.140 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:28:58.155 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:03.173 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:08.189 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:13.212 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:18.237 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:23.259 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:28.265 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:33.270 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:38.281 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:43.301 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:48.368 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:53.387 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:29:58.406 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:03.430 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:08.442 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:13.452 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:18.475 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:23.497 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:28.518 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:33.549 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:38.602 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:43.625 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:48.748 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:53.790 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:30:58.817 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:03.838 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:08.851 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:13.853 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:18.864 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:23.884 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:28.901 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:33.907 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:38.925 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:43.943 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:48.978 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:53.997 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:31:59.015 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:04.033 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:09.054 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:14.078 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:19.095 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:24.105 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:29.127 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:34.150 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:39.165 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:44.182 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:49.225 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:54.239 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:32:59.262 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:04.271 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:09.287 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:14.305 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:19.318 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:24.322 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:29.342 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:34.364 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:39.380 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:44.392 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:49.423 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:54.441 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:33:59.461 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:04.468 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:09.490 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:14.507 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:19.524 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:24.549 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:29.566 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:34.574 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:39.590 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:44.603 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:49.658 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:54.682 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:34:59.702 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:04.724 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:09.746 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:14.761 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:19.769 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:24.777 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:29.792 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:34.810 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:39.816 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:44.829 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:49.878 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:54.912 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:35:59.921 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:04.933 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:09.950 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:14.971 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:20.001 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:25.024 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:30.041 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:35.051 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:40.069 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:45.086 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:50.126 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:36:55.139 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:00.158 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:05.171 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:10.192 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:15.210 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:20.231 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:25.245 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:30.263 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:35.279 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:40.294 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:45.307 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:50.352 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:37:55.369 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:00.382 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:05.396 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:10.410 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:15.421 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:20.435 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:25.444 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:30.461 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:35.465 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:40.481 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:45.494 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:50.539 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:38:55.549 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:00.571 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:05.584 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:10.593 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:15.608 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:20.620 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:25.628 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:30.638 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:35.666 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:40.692 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:45.702 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:50.749 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:39:55.762 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:00.787 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:05.815 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:10.835 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:15.846 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:20.861 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:25.872 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:30.894 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:35.916 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:40.926 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:45.952 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:51.008 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:40:56.031 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:01.049 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:06.071 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:11.087 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:16.111 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:21.129 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:26.152 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:31.175 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:36.195 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:41.204 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:46.233 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:51.293 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:41:56.302 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:01.313 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:06.339 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:11.369 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:16.389 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:21.396 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:26.422 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:31.442 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:36.467 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:41.490 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:46.513 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:51.587 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:42:56.606 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:01.612 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:06.630 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:11.650 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:16.669 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:21.685 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:26.698 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:31.708 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:36.723 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:41.727 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:46.743 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:51.853 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:43:56.870 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:01.916 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:06.981 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:12.028 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:17.065 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:22.095 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:27.138 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:32.154 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:37.222 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:42.269 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:47.296 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:52.375 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:44:57.396 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:02.413 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:07.430 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:12.439 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:17.447 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:22.450 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:27.466 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:32.471 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:37.494 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:42.508 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:47.524 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:52.560 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:45:57.585 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:02.595 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:07.609 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:12.626 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:17.647 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:22.670 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:27.693 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:32.710 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:37.722 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:42.736 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:47.747 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:52.803 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:46:57.819 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:02.833 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:07.847 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:12.865 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:17.875 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:22.892 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:27.906 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:32.914 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:37.936 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:42.951 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:47.976 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:53.000 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:47:58.013 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:03.015 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:08.030 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:13.044 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:18.071 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:23.091 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:28.104 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:33.119 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:38.127 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:43.141 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:48.165 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:53.258 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:48:58.273 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:03.293 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:08.310 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:13.327 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:18.339 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:23.355 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:28.363 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:33.394 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:38.412 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:43.425 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:48.437 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:53.488 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:49:58.517 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:03.537 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:08.559 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:13.574 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:18.588 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:23.597 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:28.611 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:33.623 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:38.627 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:43.647 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:48.671 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:53.727 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:50:58.735 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:03.753 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:08.769 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:13.781 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:18.792 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:23.811 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:28.827 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:33.847 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:38.861 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:43.878 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:48.888 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:53.936 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:51:58.956 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:03.978 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:08.983 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:13.995 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:19.016 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:24.033 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:29.048 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:34.059 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:39.078 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:44.092 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:49.103 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:54.148 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:52:59.162 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:53:04.177 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:53:09.195 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:53:14.216 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:53:19.239 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:53:24.260 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 14:53:29.272 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:58:56.535 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:01.589 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:06.623 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:11.631 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:16.645 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:21.669 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:26.700 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:31.838 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:36.847 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:41.863 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:46.887 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:51.895 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 15:59:56.910 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:01.949 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:06.956 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:11.968 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:16.987 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:21.994 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:27.014 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:32.028 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:37.050 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:42.062 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:47.064 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:52.079 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:00:57.094 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:02.130 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:07.135 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:12.150 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:17.164 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:22.181 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:27.191 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:32.196 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:37.215 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:42.216 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:47.223 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:52.242 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:01:57.252 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:02:02.295 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:02:07.311 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:02:12.328 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:02:17.340 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:05.644 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:10.656 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:15.663 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:20.670 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:25.682 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:30.694 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:35.709 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:40.715 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:45.720 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:50.743 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:14:55.749 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:00.768 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:05.790 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:10.843 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:15.858 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:20.869 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:25.884 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:30.899 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:35.911 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:40.925 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:45.932 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:50.947 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:15:55.956 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:00.973 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:05.988 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:11.034 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:16.039 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:21.060 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:26.074 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:31.092 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:36.103 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:41.114 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:46.118 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:51.127 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:16:56.139 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:01.158 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:06.166 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:11.211 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:16.231 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:21.239 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:26.259 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:31.262 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:36.272 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:41.283 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:46.303 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:51.327 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:17:56.345 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:01.347 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:06.368 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:11.423 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:16.431 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:21.442 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:26.461 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:31.465 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:36.477 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:41.487 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 16:18:46.495 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:10.871 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:17.523 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:22.524 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:27.538 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:32.552 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:37.563 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:42.569 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:47.579 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:52.585 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:01:57.610 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:02.613 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:07.636 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:12.646 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:17.705 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:22.716 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:27.734 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:32.760 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:37.760 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:42.772 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:47.797 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:52.816 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:02:57.839 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:02.848 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:07.859 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:12.878 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:17.925 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:22.943 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:27.947 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:32.959 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:37.983 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:43.002 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:48.019 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:53.038 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:03:58.062 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:03.074 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:08.100 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:13.108 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:18.146 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:23.171 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:28.186 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:33.199 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:38.205 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:43.227 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:48.241 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:53.264 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:04:58.273 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:03.280 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:08.296 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:13.311 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:18.358 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:23.367 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:28.367 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:33.380 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:38.390 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:43.406 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:48.425 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:53.437 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:05:58.443 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:03.457 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:08.477 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:13.485 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:18.532 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:23.568 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:28.575 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:33.587 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:38.606 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:43.615 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:48.627 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:53.642 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:06:58.652 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:03.674 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:08.692 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:13.706 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:18.739 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:23.751 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:28.770 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:33.797 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:38.815 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:43.828 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:48.845 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:53.860 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:07:58.877 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:03.883 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:08.906 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:13.921 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:18.966 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:23.985 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:28.999 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:34.015 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:39.036 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:44.065 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:49.076 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:54.087 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:08:59.096 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:04.113 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:09.137 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:14.150 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:19.199 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:24.214 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:29.228 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:34.244 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:09:39.268 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:08.105 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:13.142 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:18.156 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:23.155 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:28.165 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:33.193 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:38.209 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:43.233 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:48.253 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:53.279 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:16:58.303 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:03.354 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:08.365 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:13.433 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:18.453 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:23.482 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:28.502 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:33.550 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:38.586 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:43.608 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:48.643 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:53.658 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:17:58.682 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:03.728 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:08.749 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:13.771 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:18.788 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:23.804 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:28.822 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:33.838 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:38.849 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:43.855 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:48.868 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:53.880 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:18:58.898 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:03.929 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:08.959 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:14.020 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:19.038 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:24.053 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:29.083 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:34.103 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:39.115 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:44.137 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:49.146 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:54.188 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:19:59.204 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:04.214 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:09.222 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:14.245 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:19.269 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:24.276 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:29.291 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:34.314 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:39.327 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:44.336 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:49.348 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:54.361 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:20:59.383 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:21:04.408 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:21:09.528 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:21:14.571 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:21:19.588 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:21:24.600 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:21:29.615 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:23:30.792 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:23:36.065 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:23:41.097 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:23:46.113 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:23:51.129 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:23:56.148 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:24:01.190 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:19.758 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:25.111 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:30.130 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:35.148 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:40.153 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:45.182 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:26:50.195 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:27:50.670 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
+2026-03-01 17:27:55.976 +02:00 [INF] CryptoProj.API.HostedServices.CatsHostedService 
+No cats in the database
+
