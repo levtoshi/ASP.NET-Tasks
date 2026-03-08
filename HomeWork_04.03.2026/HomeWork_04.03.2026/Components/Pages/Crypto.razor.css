@@ -1,0 +1,68 @@
+.crypto-container {
+    background-color: #0d1421;
+    padding: 30px;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.custom-table {
+    background-color: transparent !important;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    .custom-table thead th {
+        background-color: #0d1421;
+        color: #eff2f7;
+        font-size: 0.75rem;
+        border-bottom: 1px solid #222531;
+        padding: 15px 10px;
+    }
+
+    .custom-table tbody td {
+        background-color: #0d1421;
+        border-bottom: 1px solid #222531;
+        padding: 18px 10px;
+        font-size: 0.875rem;
+    }
+
+.muted-column, .symbol-text {
+    color: #858ca2 !important;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.text-success {
+    color: #16c784 !important;
+}
+
+.text-danger {
+    color: #ea3943 !important;
+}
+
+.add-form {
+    background-color: #171924;
+}
+
+.custom-input {
+    background-color: #222531;
+    border: 1px solid #323546;
+    color: white;
+}
+
+    .custom-input:focus {
+        background-color: #222531;
+        border-color: #3861fb;
+        color: white;
+        box-shadow: none;
+    }
+
+    .custom-input::placeholder {
+        color: #858ca2;
+        opacity: 1;
+    }
+
+.btn-primary {
+    background-color: #3861fb;
+    border: none;
+}

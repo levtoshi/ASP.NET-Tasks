@@ -1,0 +1,97 @@
+﻿@page "/crypto"
+@using HomeWork_04._03._2026.Models
+@rendermode InteractiveServer
+
+<div class="crypto-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="text-white">Cryptocurrency Prices by Market Cap</h3>
+    </div>
+
+    <div class="add-form mb-4 p-4 border-0 rounded shadow-sm">
+        <h5 class="text-white mb-3">Add New Asset</h5>
+        <div class="row g-3">
+            <div class="col-md-2">
+                <input type="text" class="form-control custom-input" @bind="newCoin.Name" placeholder="Name (e.g. Bitcoin)" />
+            </div>
+            <div class="col-md-1">
+                <input type="text" class="form-control custom-input" @bind="newCoin.Symbol" placeholder="BTC" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" class="form-control custom-input" @bind="newCoin.Price" placeholder="Price (₴)" />
+            </div>
+            <div class="col-md-2">
+                <input type="number" class="form-control custom-input" @bind="newCoin.MarketCap" placeholder="Market Cap" />
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control custom-input" @bind="newCoin.CirculatingSupply" placeholder="Supply (e.g. 19M BTC)" />
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100 fw-bold" @onclick="AddCurrency">Add Asset</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle custom-table">
+            <thead>
+                <tr>
+                    <th class="muted-column">#</th>
+                    <th>Name</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">1h %</th>
+                    <th class="text-end">24h %</th>
+                    <th class="text-end">7d %</th>
+                    <th class="text-end">Market Cap</th>
+                    <th class="text-end">Volume(24h)</th>
+                    <th class="text-end">Circulating Supply</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var coin in currencies)
+                {
+                    <tr>
+                        <td class="muted-column">@coin.Rank</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <span class="fw-bold me-2">@coin.Name</span>
+                                <span class="symbol-text">@coin.Symbol</span>
+                            </div>
+                        </td>
+                        <td class="text-end fw-bold">₴@coin.Price.ToString("N2")</td>
+                        <td class="text-end @GetColorClass(coin.Change1h)">@FormatPercent(coin.Change1h)</td>
+                        <td class="text-end @GetColorClass(coin.Change24h)">@FormatPercent(coin.Change24h)</td>
+                        <td class="text-end @GetColorClass(coin.Change7d)">@FormatPercent(coin.Change7d)</td>
+                        <td class="text-end">UAH @coin.MarketCap.ToString("N0")</td>
+                        <td class="text-end">UAH @coin.Volume24h.ToString("N0")</td>
+                        <td class="text-end">@coin.CirculatingSupply</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+
+    private List<CryptoCurrency> currencies = new()
+    {
+        new CryptoCurrency { Rank = 1, Name = "Bitcoin", Symbol = "BTC", Price = 2990930.57, Change1h = -0.17, Change24h = 4.65, Change7d = 6.30, MarketCap = 59809515999034, Volume24h = 2416605035384, CirculatingSupply = "19.99M BTC" },
+        new CryptoCurrency { Rank = 2, Name = "Ethereum", Symbol = "ETH", Price = 88018.51, Change1h = -0.53, Change24h = 3.20, Change7d = 8.83, MarketCap = 10623149247465, Volume24h = 1137195471332, CirculatingSupply = "120.69M ETH" },
+        new CryptoCurrency { Rank = 3, Name = "Tether", Symbol = "USDT", Price = 43.33, Change1h = 0.00, Change24h = 0.67, Change7d = 0.24, MarketCap = 7957714201087, Volume24h = 4575736205415, CirculatingSupply = "183.63B USDT" }
+    };
+
+    private CryptoCurrency newCoin = new();
+
+    private void AddCurrency()
+    {
+        if (!string.IsNullOrWhiteSpace(newCoin.Name) && !string.IsNullOrWhiteSpace(newCoin.Symbol))
+        {
+            newCoin.Rank = (currencies.Any() ? currencies.Max(c => c.Rank) : 0) + 1;
+            currencies.Add(newCoin);
+            newCoin = new CryptoCurrency(); 
+        }
+    }
+
+    private string GetColorClass(double value) => value >= 0 ? "text-success" : "text-danger";
+    private string FormatPercent(double value) => $"{(value >= 0 ? "▲" : "▼")} {Math.Abs(value):F2}%";
+}
