@@ -1,0 +1,54 @@
+﻿@page "/books"
+@using HomeWork_06._03._2026.Models
+@using HomeWork_06._03._2026.Services
+@inject BookService BookService
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<div class="store-container">
+    <h2 class="text-white mb-4">Book Store</h2>
+
+    <div class="row g-4">
+        @foreach (var book in PagedBooks)
+        {
+            <div class="col-md-3">
+                <div class="book-card" @onclick="() => NavigateToDetails(book.Id)">
+                    <img src="@book.ImageUrl" alt="Cover" />
+                    <div class="p-3">
+                        <h5 class="text-truncate">@book.Title</h5>
+                        <p class="author-text">@book.Author</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">₴@book.Price</span>
+                            <span class="view-btn">Details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="pagination-bar mt-5 d-flex justify-content-center gap-2">
+        <button class="btn btn-outline-light" disabled="@(currentPage == 1)" @onclick="() => ChangePage(currentPage - 1)">Prev</button>
+        @for (int i = 1; i <= TotalPages; i++)
+        {
+            int pageNum = i;
+            <button class="btn @(currentPage == pageNum ? "btn-primary" : "btn-outline-light")" @onclick="() => ChangePage(pageNum)">@pageNum</button>
+        }
+        <button class="btn btn-outline-light" disabled="@(currentPage == TotalPages)" @onclick="() => ChangePage(currentPage + 1)">Next</button>
+    </div>
+</div>
+
+@code {
+    private int pageSize = 8;
+    private int currentPage = 1;
+
+    private IEnumerable<Book> PagedBooks => BookService.Books
+        .Skip((currentPage - 1) * pageSize)
+        .Take(pageSize);
+
+    private int TotalPages => (int)Math.Ceiling((double)BookService.Books.Count / pageSize);
+
+    private void ChangePage(int page) => currentPage = page;
+
+    private void NavigateToDetails(int bookId) => Nav.NavigateTo($"/books/{bookId}");
+}

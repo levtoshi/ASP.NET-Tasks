@@ -1,0 +1,68 @@
+﻿@page "/books/{Id:int}"
+@using HomeWork_06._03._2026.Models
+@using HomeWork_06._03._2026.Services
+@inject BookService BookService
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+@if (book == null)
+{
+    <p class="text-white">Book not found...</p>
+}
+else
+{
+    <div class="store-container">
+        <button class="btn btn-link text-white-50 mb-4 p-0" @onclick='() => Nav.NavigateTo("/books")'>← Back to list</button>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="@book.ImageUrl" class="img-fluid rounded shadow" style="width: 100%; max-width: 300px;" />
+            </div>
+            <div class="col-md-8 text-white">
+                @if (isEditing)
+                {
+                    <input class="form-control mb-2 bg-dark text-white border-secondary" @bind="book.Title" />
+                    <input class="form-control mb-2 bg-dark text-white border-secondary" @bind="book.Author" />
+                    <textarea class="form-control mb-2 bg-dark text-white border-secondary" @bind="book.Description" rows="5"></textarea>
+                    <button class="btn btn-success me-2" @onclick="ToggleEdit">Save Changes</button>
+                }
+                else
+                {
+                    <h1 class="display-5 fw-bold">@book.Title</h1>
+                    <h4 class="text-primary mb-4">@book.Author</h4>
+                    <p class="lead text-secondary">@book.Description</p>
+                    <h2 class="mb-4">₴@book.Price</h2>
+                    
+                    <div class="mt-5">
+                        <button class="btn btn-outline-primary me-2 px-4" @onclick="ToggleEdit">Update</button>
+                        <button class="btn btn-danger px-4" @onclick="DeleteBook">Delete</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Book? book;
+    private bool isEditing = false;
+
+    protected override void OnInitialized()
+    {
+        book = BookService.Books.FirstOrDefault(b => b.Id == Id);
+    }
+
+    private void ToggleEdit() => isEditing = !isEditing;
+
+    private async Task DeleteBook()
+    {
+        bool confirmed = await JS.InvokeAsync<bool>("confirm", $"Are you sure you want to delete '{book?.Title}'?");
+        if (confirmed && book != null)
+        {
+            BookService.Books.Remove(book);
+            Nav.NavigateTo("/books");
+        }
+    }
+}
