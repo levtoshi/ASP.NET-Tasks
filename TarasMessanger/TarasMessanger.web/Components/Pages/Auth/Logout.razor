@@ -1,0 +1,25 @@
+@page "/auth/logout"
+@using Microsoft.AspNetCore.Identity
+@using TarasMessanger.Storage.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject NavigationManager NavigationManager
+
+<PageTitle>Logout</PageTitle>
+
+<div class="app-muted">Signing out...</div>
+
+@code {
+    [CascadingParameter] private HttpContext HttpContext { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            await SignInManager.SignOutAsync();
+            NavigationManager.NavigateTo("/auth/login", forceLoad: true);
+        }
+        catch { };
+    }
+}
+

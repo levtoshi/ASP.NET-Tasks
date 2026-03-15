@@ -1,0 +1,62 @@
+﻿.geo-message {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.my-message {
+    align-self: flex-end;
+}
+
+.message-author {
+    font-size: 13px;
+    font-weight: 600;
+    color: #3390ec;
+    margin-bottom: 2px;
+}
+
+.geo-bubble {
+    background: white;
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.geo-map img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.geo-open {
+    display: inline-block;
+    background: #f1f3f5;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.geo-info {
+    padding: 2px 4px;
+}
+
+.geo-coords {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.geo-text {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #777;
+    align-self: flex-end;
+}

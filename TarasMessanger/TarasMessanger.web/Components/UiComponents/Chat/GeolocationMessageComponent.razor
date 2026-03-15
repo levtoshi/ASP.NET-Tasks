@@ -1,0 +1,47 @@
+﻿@using TarasMessanger.Core.DTOs.Messages
+@using System.Globalization
+
+<div class="geo-message @(MyMessage ? "my-message" : "")">
+
+    <div class="message-author">
+        @Message.Nickname
+    </div>
+
+    <div class="geo-bubble">
+
+        <a class="geo-map"
+           href="https://www.google.com/maps?q=@latitude,@longitude"
+           target="_blank">
+            📍 Open location
+        </a>
+
+        <div class="geo-info">
+            <div class="geo-coords">
+                📍 @Message.Latitude.ToString("0.0000"), @Message.Longitude.ToString("0.0000")
+            </div>
+        </div>
+
+        <span class="message-time">
+            @Message.CreatedAt.ToShortTimeString()
+        </span>
+
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+    public GeoMessageDto Message { get; set; }
+
+    [Parameter]
+    public bool MyMessage { get; set; } = false;
+
+    private string latitude;
+    private string longitude;
+
+    protected override void OnInitialized()
+    {
+        latitude = Message.Latitude.ToString(CultureInfo.InvariantCulture);
+        longitude = Message.Longitude.ToString(CultureInfo.InvariantCulture);
+    }
+}

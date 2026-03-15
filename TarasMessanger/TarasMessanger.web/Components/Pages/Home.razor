@@ -1,0 +1,65 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization;
+@using Microsoft.AspNetCore.SignalR.Client
+
+@rendermode InteractiveServer
+
+@inject NavigationManager NavigationManager;
+
+@attribute [Authorize]
+
+<PageTitle>Home</PageTitle>
+
+<AuthorizeView>
+	<h3 class="app-page-title">Welcome, @context.User.Identity?.Name</h3>
+
+	<div class="row g-3 mt-1">
+		<div class="col-12 col-lg-6">
+			<div class="app-card p-3 h-100">
+				<div class="d-flex align-items-center justify-content-between">
+					<div>
+						<div class="app-muted small">Notifications</div>
+						<div class="fs-4 fw-bold">@_notification</div>
+					</div>
+					<a class="btn btn-outline-secondary" href="/chats">Open chats</a>
+				</div>
+				<div class="app-muted small mt-2">
+					You will see a counter increment when someone sends a message.
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 col-lg-6">
+			<div class="app-card p-3 h-100">
+				<div class="app-muted small">Quick actions</div>
+				<div class="d-flex flex-wrap gap-2 mt-2">
+					<a class="btn btn-primary" href="/feed">Feed</a>
+					<a class="btn btn-outline-secondary" href="/users">Search users</a>
+					<a class="btn btn-outline-secondary" href="/me">My profile</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</AuthorizeView>
+
+@code {
+	private HubConnection? _hubConnection;
+	private int _notification = 0;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_hubConnection = new HubConnectionBuilder()
+			.WithUrl(NavigationManager.ToAbsoluteUri("/notificationHub"))
+			.WithAutomaticReconnect()
+			.Build();
+
+		_hubConnection.On("ReceiveNotification", () =>
+		{
+			_notification++;
+			InvokeAsync(StateHasChanged);
+		});
+
+		await _hubConnection.StartAsync();
+	}
+}

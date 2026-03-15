@@ -1,0 +1,149 @@
+﻿@page "/chats"
+
+@using TarasMessanger.Core.DTOs.Chats
+@using TarasMessanger.Services
+@using TarasMessanger.Storage.Identity
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Identity
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.SignalR.Client
+
+@rendermode InteractiveServer
+
+@inject PrivateChatService PrivateChatService;
+@inject UserManager<ApplicationUser> UserManager;
+@inject NavigationManager NavigationManager;
+
+@attribute [Authorize]
+
+<h3 class="app-page-title">Chats</h3>
+
+@if (!string.IsNullOrEmpty(error))
+{
+	<h3>@error</h3>
+}
+
+<EditForm EditContext="editContext" FormName="newChat" OnValidSubmit="AddNewChat" class="d-flex flex-grow-1 gap-2">
+	<DataAnnotationsValidator />
+
+	<InputText @bind-Value="Input.Nickname"
+			   id="Input.Nickname"
+			   class="form-control flex-grow-1"
+			   aria-required="true"
+			   placeholder="Nickname" />
+
+	<button class="btn btn-primary flex-shrink-0 px-4" type="submit">
+		Add new chat
+	</button>
+</EditForm>
+
+@if(_chats.Count <= 0)
+{
+	<div>
+		<h4 class="app-muted">Chats not found</h4>
+	</div>
+}
+else
+{
+	<div class="list-group mt-3">
+		@foreach (var chat in _chats)
+		{
+			var role = GetMyRoleInPrivateChat(chat);
+			var partner = role == "sender" ? chat.ReceiverNickname : chat.SenderNickname;
+
+			<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center gap-2"
+			   href="/private/chat/@chat.Id">
+				<div class="d-flex flex-column">
+					<div class="fw-bold">@partner</div>
+					<div class="small app-muted">Created @chat.CreatedAt.ToLocalTime().ToString("g")</div>
+				</div>
+				<span class="badge text-bg-primary">Open</span>
+			</a>
+		}
+	</div>
+}
+
+@code {
+	private ApplicationUser? currentUser;
+	private List<PrivateChatDto> _chats = new();
+	private InputModel Input;
+	private EditContext editContext;
+	private string? error;
+	private HubConnection? _hubConnection;
+
+	[CascadingParameter]
+	private Task<AuthenticationState> AuthenticationStateTask { get; set; } = default!;
+
+	public async Task AddNewChat()
+	{
+		var user = await UserManager.FindByNameAsync(Input.Nickname);
+		if (user == null)
+		{
+			error = "User not found!";
+			return;
+		}
+
+		try
+		{
+			PrivateChatDto newChat = await PrivateChatService.CreateNewPrivateChat(currentUser.Id, user.Id);
+			await _hubConnection.SendAsync("AssignNewPrivateChat", newChat);
+			error = "";
+		} 
+		catch(Exception ex)
+		{
+			error = ex.Message;
+		}
+	}
+
+	private string? GetMyRoleInPrivateChat(PrivateChatDto chat)
+	{
+		if (chat.SenderId == currentUser.Id)
+			return "sender";
+
+		if (chat.ReceiverId == currentUser.Id)
+			return "receiver";
+
+		return null;
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		Input ??= new();
+		editContext = new(Input);
+
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
+		currentUser = await UserManager.GetUserAsync(user);
+		if (currentUser is null)
+		{
+			NavigationManager.NavigateTo("/");
+			return;
+		}
+
+		_chats = await PrivateChatService.GetUserPrivateChats(currentUser.Id);
+
+		_hubConnection = new HubConnectionBuilder()
+			.WithUrl(NavigationManager.ToAbsoluteUri("/chatHub"))
+			.WithAutomaticReconnect()
+			.Build();
+
+		_hubConnection.On<PrivateChatDto>("ReceiveNewChat", (PrivateChatDto chat) =>
+		{
+			if (GetMyRoleInPrivateChat(chat) != null)
+			{
+				_chats.Add(chat);
+				InvokeAsync(StateHasChanged);
+			}
+		});
+
+		await _hubConnection.StartAsync();
+	}
+
+	private sealed class InputModel
+	{
+		[Required]
+		public string Nickname { get; set; }
+	}
+}

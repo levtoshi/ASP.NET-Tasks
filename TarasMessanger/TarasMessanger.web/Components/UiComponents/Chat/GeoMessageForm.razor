@@ -1,0 +1,51 @@
+﻿@using TarasMessanger.Core.Entities.Message
+@using TarasMessanger.Core.Services
+@using TarasMessanger.Storage.Identity
+
+@rendermode InteractiveServer
+
+@inject IJSRuntime JS;
+@inject MessageService MessageService;
+
+<button class="btn btn-primary flex-shrink-0 px-4" @onclick="SubmitGeolocationMessage">Geo</button>
+
+@code {
+	[Parameter]
+	public ApplicationUser? currentUser { get; set; }
+
+	[Parameter]
+	public Guid ChatId { get; set; }
+
+	[Parameter]
+	public EventCallback<GeoMessage> OnSend { get; set; }
+
+	public async Task SubmitGeolocationMessage()
+	{
+		var geo = await  GetLocation();
+		if (geo is null)
+		{
+			return;
+		}
+
+		var geoMessage = await MessageService.SendGeoMessage(currentUser.Id, ChatId, geo.Latitude, geo.Longitude);
+		await OnSend.InvokeAsync(geoMessage);
+	}
+
+	private async Task<GeolocationModel> GetLocation()
+	{
+		try
+		{
+			return await JS.InvokeAsync<GeolocationModel>("getLocation");
+		}
+		catch(Exception ex)
+		{
+			return null;
+		}
+	}
+
+	private sealed class GeolocationModel
+	{
+		public double Latitude { get; set; }
+		public double Longitude { get; set; }
+	}
+}

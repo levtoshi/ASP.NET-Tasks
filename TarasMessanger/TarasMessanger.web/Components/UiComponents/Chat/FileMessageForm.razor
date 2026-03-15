@@ -1,0 +1,98 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using TarasMessanger.Core.Entities.Message
+@using TarasMessanger.Core.Services
+@using TarasMessanger.Storage.Identity
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+
+@rendermode InteractiveServer
+
+@inject IWebHostEnvironment Environment
+@inject MessageService MessageService;
+
+<button class="btn btn-primary flex-shrink-0 px-4" @onclick="ShowModal">Upload file</button>
+
+@if (showModal)
+{
+	<div class="modal d-block">
+		<div class="modal-dialog">
+			<div class="modal-content p-3">
+				<button class="btn btn-primary flex-shrink-0 px-4" @onclick="HideModal">Close</button>
+				<InputFile OnChange="HandleFileSelected" placeholder = "Upload file" />
+				<InputText @bind-Value="Input.Text" id="Input.Text" aria-required="true" class="form-control flex-grow-1" placeholder="Message" />
+				<button class="btn btn-primary flex-shrink-0 px-4" @onclick="SubmitFileMessage">Send</button>
+			</div>
+		</div>
+	</div>
+}
+
+@code {
+	[Parameter]
+	public ApplicationUser? currentUser { get; set; }
+
+	[Parameter]
+	public Guid ChatId { get; set; }
+
+	[Parameter]
+	public EventCallback<FileMessage> OnSend { get; set; }
+
+	private FileInputModel Input;
+	private EditContext editContext;
+	private bool showModal = false;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Input ??= new();
+		editContext = new(Input);
+	}
+
+	public void ShowModal()
+	{
+		showModal = true;
+	}
+
+	public void HideModal()
+	{
+		showModal = false;
+
+		Input.File = null;
+		Input.Text = "";
+	}
+
+	public void HandleFileSelected(InputFileChangeEventArgs e)
+	{
+		Input.File = e.File;
+	}
+
+	public async Task SubmitFileMessage()
+	{
+		if (currentUser is null || Input.File is null)
+		{
+			return;
+		}
+
+		Directory.CreateDirectory( Path.Combine(Environment.WebRootPath, "static"));
+
+		var extension = Path.GetExtension(Input.File.Name);
+		var fileName = Path.GetRandomFileName() + extension;
+		await using var fs = new FileStream(
+			Path.Combine(Environment.WebRootPath, "static", fileName),
+			FileMode.Create
+		);
+		await Input.File.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024).CopyToAsync(fs);
+		var filePath = "/static/" + fileName;
+
+		var fileMessage = await MessageService.SendFileMessage(currentUser.Id, ChatId, filePath, Input.Text);
+		await OnSend.InvokeAsync(fileMessage);
+
+		HideModal();
+	}
+
+	private sealed class FileInputModel
+	{
+		public IBrowserFile? File { get; set; }
+
+
+		public string? Text { get; set; } = "";
+	}
+}

@@ -1,0 +1,62 @@
+﻿@using TarasMessanger.Core.DTOs.Messages
+
+<div class="file-message @(MyMessage ? "my-message" : "")">
+
+    <div class="message-author">
+        @Message.Nickname
+    </div>
+
+    <div class="message-bubble">
+
+        @if (IsPictureFile(Message.FilePath))
+        {
+            <div class="image-preview">
+                <img src="@Message.FilePath" alt="image" />
+            </div>
+        }
+        else
+        {
+            <div class="file-row">
+                <div class="file-icon">
+                    📄
+                </div>
+
+                <div class="file-info">
+                    <a class="file-name" href="@Message.FilePath" target="_blank">
+                        @System.IO.Path.GetFileName(Message.FilePath)
+                    </a>
+                </div>
+            </div>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Message.Text))
+        {
+            <div class="message-text">
+                @Message.Text
+            </div>
+        }
+
+        <span class="message-time">
+            @Message.CreatedAt.ToShortTimeString()
+        </span>
+
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+    public FileMessageDto Message { get; set; }
+
+    [Parameter]
+    public bool MyMessage { get; set; } = false;
+
+    public bool IsPictureFile(string filePath)
+    {
+        var extension = Path.GetExtension(filePath);
+        if (extension == ".png" || extension == ".jpg" || extension == ".jpeg")
+            return true;
+
+        return false;
+    }
+}

@@ -1,0 +1,24 @@
+﻿@using TarasMessanger.Core.DTOs.Messages
+
+
+<div class="text-message p-1 border-2 @(MyMessage ? "my-message" : "")">
+	<div class="content-inner">
+		<div class="message-title">
+			@Message.Nickname
+		</div>
+		<div class="message-text-content">
+			@Message.Text
+			<span class="message-meta">
+				@Message.CreatedAt.ToShortTimeString()
+			</span>
+		</div>
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public TextMessageDto Message { get; set; }
+
+	[Parameter]
+	public bool MyMessage { get; set; } = false;
+}

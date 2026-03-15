@@ -1,0 +1,30 @@
+@using TarasMessanger.Core.DTOs.Posts
+
+<div class="post-card app-card p-3">
+    <div class="d-flex align-items-baseline justify-content-between gap-2 flex-wrap">
+        <a class="post-author" href="/u/@Post.AuthorNickname">@Post.AuthorNickname</a>
+        <span class="post-time">@Post.CreatedAt.ToLocalTime().ToString("g")</span>
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(Post.Text))
+    {
+        <div class="post-text mt-2">@Post.Text</div>
+    }
+
+    @if (Post.PhotoPaths.Count > 0)
+    {
+        <div class="post-photos mt-2">
+            @foreach (var p in Post.PhotoPaths)
+            {
+                <a class="post-photo" href="@p" target="_blank" rel="noopener">
+                    <img src="@p" alt="post photo" loading="lazy" />
+                </a>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public PostDto Post { get; set; } = default!;
+}
+

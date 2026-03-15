@@ -1,0 +1,224 @@
+﻿@page "/private/chat/{ChatId:guid}"
+
+@using TarasMessanger.Core.DTOs.Chats
+@using TarasMessanger.Core.DTOs.Messages
+@using TarasMessanger.Core.Entities.Message
+@using TarasMessanger.Core.Services
+@using TarasMessanger.Services
+@using TarasMessanger.Storage.Identity
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.SignalR.Client
+@using System.ComponentModel.DataAnnotations
+@using TarasMessanger.web.Components.UiComponents.Chat;
+
+@rendermode InteractiveServer
+@implements IAsyncDisposable
+
+@inject PrivateChatService PrivateChatService;
+@inject MessageService MessageService;
+@inject UserManager<ApplicationUser> UserManager;
+@inject NavigationManager NavigationManager;
+
+@attribute [Authorize]
+
+@if(currentPrivateChat != null)
+{
+	<div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+		<div>
+			<div class="app-muted small">Private chat</div>
+			<h4 class="m-0">
+				@if (currentUserRoleInChat == "sender")
+				{
+					@currentPrivateChat.ReceiverNickname
+				}
+				else
+				{
+					@currentPrivateChat.SenderNickname
+				}
+			</h4>
+		</div>
+		<a class="btn btn-outline-secondary btn-sm" href="/chats">Back</a>
+	</div>
+
+	<div class="row">
+		<div class="col-12 chat-container">
+			@foreach (var message in messageHistory)
+			{
+				@if(message is TextMessageDto)
+				{
+					<TextMessageComponent 
+						Message="@(message as TextMessageDto)" 
+						MyMessage="@(currentUser.Id == message.UserId)"
+					/>
+				}
+
+				@if (message is FileMessageDto)
+				{
+					<FileMessageComponent
+						Message="@(message as FileMessageDto)"
+						MyMessage="@(currentUser.Id == message.UserId)" 
+					/>
+				}
+
+				@if (message is GeoMessageDto)
+				{
+					<GeolocationMessageComponent
+						Message="@(message as GeoMessageDto)"
+						MyMessage="@(currentUser.Id == message.UserId)" 
+					/>
+				}
+			}
+		</div>
+		<div class="col-12 d-flex gap-2 py-2 align-items-center">
+			<EditForm EditContext="editContext" OnValidSubmit="SendTextMessage" FormName="textMessage" class="d-flex flex-grow-1 gap-2">
+				<DataAnnotationsValidator />
+
+				<InputText @bind-Value="Input.Text"
+					   id="Input.Text"
+					   class="form-control flex-grow-1"
+					   aria-required="true"
+					   placeholder="Message" />
+
+				<button class="btn btn-primary flex-shrink-0 px-4" type="submit">
+					Send
+				</button>
+		</EditForm>
+
+		<div class="flex-shrink-0">
+			<FileMessageForm 
+				currentUser="@currentUser"
+				ChatId ="@currentPrivateChat.Id"
+				OnSend="@OnFileMessageSent"
+			/>
+		</div>
+
+		<div class="flex-shrink-0">
+			<GeoMessageForm 
+				currentUser="@currentUser"
+				ChatId ="@currentPrivateChat.Id"
+				OnSend="@OnGeoMessageSent" 
+			/>
+		</div>
+	</div>
+	</div>
+}
+
+@code {
+	private ApplicationUser? currentUser;
+	private PrivateChatDto? currentPrivateChat;
+	private string? currentUserRoleInChat;
+	private HubConnection? _hubConnection;
+	private InputModel Input;
+	private EditContext editContext;
+	private List<MessageDto> messageHistory = new();
+
+	[Parameter]
+	public Guid ChatId { get; set; }
+
+	[CascadingParameter]
+	private Task<AuthenticationState> AuthenticationStateTask { get; set; } = default!;
+
+	public async Task SendTextMessage()
+	{
+		var textMessage = await MessageService.SendTextMessage(currentUser.Id, currentPrivateChat.Id, Input.Text);
+		await _hubConnection.InvokeAsync("SendTextMessage", textMessage);
+		Input.Text = "";
+	}
+
+	public async Task OnFileMessageSent(FileMessage fileMessage)
+	{
+		await _hubConnection.InvokeAsync("SendFileMessage", fileMessage);
+	}
+
+	public async Task OnGeoMessageSent(GeoMessage geoMessage)
+	{
+		await _hubConnection.InvokeAsync("SendGeoMessage", geoMessage);
+	}
+
+	private string GetMyRoleInPrivateChat(PrivateChatDto chat)
+	{
+		if (chat.SenderId == currentUser.Id)
+			return "sender";
+
+		if(chat.ReceiverId == currentUser.Id)
+			return "receiver";
+
+		return null;
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		Input ??= new();
+		editContext = new(Input);
+
+		var authState = await AuthenticationStateTask;
+		var user = authState.User;
+
+		currentUser = await UserManager.GetUserAsync(user);
+		if (currentUser is null)
+		{
+			NavigationManager.NavigateTo("/");
+			return;
+		}
+
+		currentPrivateChat ??= await PrivateChatService.GetUserPrivateChat(ChatId, currentUser.Id);
+		if (currentPrivateChat == null || GetMyRoleInPrivateChat(currentPrivateChat) == null)
+		{
+			NavigationManager.NavigateTo("/");
+			return;
+		}
+
+		currentUserRoleInChat = GetMyRoleInPrivateChat(currentPrivateChat);
+		messageHistory = await MessageService.GetMessages(currentPrivateChat.Id, 20, 0);
+
+		_hubConnection = new HubConnectionBuilder()
+			.WithUrl(NavigationManager.ToAbsoluteUri("/messageHub"))
+			.WithAutomaticReconnect()
+			.Build();
+
+		_hubConnection.On<TextMessageDto>("ReceiveTextMessage", (TextMessageDto message) =>
+		{
+			messageHistory.Add(message);
+			InvokeAsync(StateHasChanged);
+		});
+		_hubConnection.On<FileMessageDto>("ReceiveFileMessage", (FileMessageDto message) =>
+		{
+			messageHistory.Add(message);
+			InvokeAsync(StateHasChanged);
+		});
+		_hubConnection.On<GeoMessageDto>("ReceiveGeoMessage", (GeoMessageDto message) =>
+		{
+			messageHistory.Add(message);
+			InvokeAsync(StateHasChanged);
+		});
+
+		await _hubConnection.StartAsync();
+
+		if(currentPrivateChat != null)
+		{
+			await _hubConnection.InvokeAsync("JoinPrivateChat", currentPrivateChat.Id);
+		}
+	}
+
+	public async ValueTask DisposeAsync()
+	{
+		if (_hubConnection != null)
+		{
+			if (currentPrivateChat != null)
+			{
+				await _hubConnection.InvokeAsync("LeavePrivateChat", currentPrivateChat.Id);
+			}
+			await _hubConnection.DisposeAsync();
+		}
+	}
+
+	private sealed class InputModel
+	{
+		[Required]
+		[Display(Name = "Text")]
+		[StringLength(512, ErrorMessage = "Maximum length is 512 symbols")]
+		public string Text { get; set; } = "";
+	}
+}
